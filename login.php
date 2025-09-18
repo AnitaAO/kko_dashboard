@@ -4,21 +4,32 @@
         <!-- <title>Welcome back!</title> -->
          <link rel="stylesheet" href="css/login.css">
     </head>
-    <h1>Welcome back</h1>
-    <h4>Enter your login details to continue</h4>
     <body>
-        <form method="POST" action="login_logic.php">
-            <label>Email</label>
-            <input type="email" name="email"><br>
+        <div class="container">
 
-            <label>Password</label>
-            <input type="password" name="password"><br>
+            <h1>Welcome back</h1>
+            <h4>Enter your login details to continue</h4>
 
-            <button type="submit">Login</button>
-        </form>
 
-        <p><?php if (isset($_SESSION["message"])) {echo $_SESSION["message"];
-        unset($_SESSION["message"]);
-        }?></p>
+            <form method="POST" action="login_logic.php">
+                <label>Email</label>
+                <input type="email" name="email"><br><br>
+
+                <label>Password</label>
+                <input type="password" name="password"><br><br>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p>
+                <?php 
+                session_start();
+                if (isset($_SESSION["message"])) {
+                    echo $_SESSION["message"];
+                    unset($_SESSION["message"]);
+                }
+                ?>
+            </p>
+        </div>
     </body>
 </html>

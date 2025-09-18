@@ -3,25 +3,34 @@
 <html>
     <head>
         <!-- <title>Welcome To OKK</title> -->
-         <h1>Welcome to OKK</h1>
+         <link rel="stylesheet" href="css/register.css">
     </head>
     <body>
-        <h2>Register</h2>
-        <h4>Please fill in the information below to create an account</h4>
-        <form method="post" action="register_logic.php">
-            <label>Name</label>
-            <input type="text" name="name" required><br>
+        <div class="container">
+            <h1>Welcome to OKK</h1>
 
-            <label>Email</label><br>
-            <input type="email" name="email" required>
+            <h2>Register</h2>
+            <h4>Please fill in the information below to create an account</h4>
+            <form method="post" action="register_logic.php">
+                <label>Name</label><br>
+                <input type="text" name="name" required><br><br>
 
-            <label>Password</label>
-            <input type="password" name="password" required><br>
+                <label>Email</label><br>
+                <input type="email" name="email" required><br><br>
 
-            <button type="submit">Register</button>
-        </form>
-        <p><?php if (isset($_SESSION["message"])) {echo $_SESSION["message"];
-            unset($_SESSION["message"]);
-        }?></p>
+                <label>Password</label><br>
+                <input type="password" name="password" required><br><br>
+
+                <button type="submit">Register</button>
+            </form>
+            <p>
+                <?php if (isset($_SESSION["message"])) {
+                    echo $_SESSION["message"];
+                    unset($_SESSION["message"]);
+                }
+                ?>
+            </p>
+        </div>
+
     </body>
 </html>
